@@ -22,7 +22,7 @@ But this approach is not properly hashing but it is open addressing
 
 class MyHashSet {
 
-    int PRIME = 997;
+    int PRIME = 2011;
     List<Integer>[] buckets;
     int hash(int key) {
         return (31 * key + 17) % PRIME;
@@ -34,7 +34,7 @@ class MyHashSet {
     public void add(int key) {
         int hsh = hash(key);
         if(buckets[hsh] == null)
-            buckets[hsh] = new ArrayList<>();
+            buckets[hsh] = new LinkedList<>();
         if(!buckets[hsh].contains(key))
             buckets[hsh].add(key);
 
