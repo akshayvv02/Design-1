@@ -1,3 +1,26 @@
+/*
+ * Uses two stacks (ArrayLists):
+ * 1. stck: stores all values.
+ * 2. minStck: tracks current minimums.
+ * `min` points to top of minStck, `top` to top of stck.
+ * - push: add to stck and update top;
+ *   if <= current min, also push to minStck.
+ * - pop: if top equals current min, pop from both stacks.
+ * - top(): returns top of stck, getMin(): returns top of minStck.
+ */
+
+/*
+ * Another approach (LinkedList):  uses a linked list where each node stores the value and the minimum at that point.
+ * On each push, the new node stores the minimum of(value and the previous node’s min), ensuring constant-time getMin().
+ * The head pointer always points to the top of the stack.
+ */
+
+// Time Complexity - O(1) - all functions, 
+// Space Complexity - O(N) - N-elements to be pushed, also keeping minimum stack
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
 class MinStack {
     ArrayList<Integer> stck;
     ArrayList<Integer> minStck;
